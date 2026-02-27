@@ -4,8 +4,7 @@ namespace Ahmedde\UnitConversion;
 
 class Unit
 {
-
-    public function __construct(public string $name, public float $value){}
+    public function __construct(public string $name, public float $value) {}
 
     private array $conversions = [
         'kg' => [
@@ -13,7 +12,7 @@ class Unit
             'grams' => 1000,
             'mg' => 1e+6,
             'tonnes' => 0.001,
-        ]
+        ],
     ];
 
     /**
@@ -30,6 +29,7 @@ class Unit
     public function convert(string $targetUnitName): float
     {
         $rate = $this->conversionRate($targetUnitName);
+
         return $this->value * $rate;
     }
 }

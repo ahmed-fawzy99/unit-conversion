@@ -4,7 +4,7 @@ namespace Ahmedde\UnitConversion;
 
 class Weight
 {
-    public function __construct(protected Unit $unit){}
+    public function __construct(protected Unit $unit) {}
 
     public static function fromUnit(string $name, float $value): self
     {
@@ -24,6 +24,7 @@ class Weight
         if ($this->unit->name === $name) {
             return $this->unit->value;
         }
+
         return $this->unit->convert($name);
     }
 
